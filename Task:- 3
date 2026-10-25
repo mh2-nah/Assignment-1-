@@ -1,1 +1,26 @@
+public class Task03 {
+    public static void main(String[] args) {
+        int[] arr = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50}; // Predefined array
+        int sum = 0; // Variable to store sum
 
+        // Calculate sum of all elements
+        for (int i = 0; i < arr.length; i++) {
+            sum = sum + arr[i]; // Add each element to sum
+        }
+
+        double average = (double) sum / arr.length; // Calculate average
+        int count = 0; // Count of elements greater than average
+        
+        // Count elements greater than average
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > average) { // Check condition
+                count++; // Increase count
+            }
+        }
+
+        // Print output
+        System.out.println("Sum = " + sum);
+        System.out.println("Average = " + average);
+        System.out.println("Elements greater than average = " + count);
+    }
+}
