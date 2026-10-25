@@ -1,1 +1,47 @@
 
+import java.util.Scanner;
+
+public class Task02 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] arr = new int[10]; // Array of size 10
+        
+        // Input 10 numbers
+        System.out.println("Enter 10 numbers:");
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // Assume first element is max and min
+        int max = arr[0];
+        int min = arr[0];
+        int maxIndex = 0; // To store index of max
+        int minIndex = 0; // To store index of min
+
+        // Find largest and smallest with index
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > max) { // If current element > max
+                max = arr[i]; // Update max
+                maxIndex = i; // Update max index
+            }
+            if (arr[i] < min) { // If current element < min
+                min = arr[i]; // Update min
+                minIndex = i; // Update min index
+            }
+        }
+
+        // Find second minimum
+        int secondMin = Integer.MAX_VALUE; // Set to max possible value
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > min && arr[i] < secondMin) { // Greater than min but smaller than current secondMin
+                secondMin = arr[i]; // Update secondMin
+            }
+        }
+
+        // Print results
+        System.out.println("Largest: " + max + " at index " + maxIndex);
+        System.out.println("Smallest: " + min + " at index " + minIndex);
+        System.out.println("Second Minimum: " + secondMin);
+        sc.close();
+    }
+}
