@@ -1,1 +1,32 @@
 
+import java.util.Scanner;
+
+public class Task09 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] arr = new int[10]; // Main array
+        boolean[] visited = new boolean[10]; // To avoid counting same element again
+        
+        // Input 10 numbers
+        System.out.println("Enter 10 numbers:");
+        for (int i = 0; i < 10; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // Logic to find duplicate occurrence
+        for (int i = 0; i < arr.length; i++) {
+            if (visited[i]) continue; // Skip if already counted
+            int count = 1; // Count itself once
+            for (int j = i + 1; j < arr.length; j++) { // Check ahead
+                if (arr[i] == arr[j]) { // If duplicate found
+                    count++; // Increase count
+                    visited[j] = true; // Mark as visited
+                }
+            }
+            if (count > 1) { // Print only if duplicate
+                System.out.println(arr[i] + " occurs " + count + " times");
+            }
+        }
+        sc.close();
+    }
+}
