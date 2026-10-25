@@ -1,1 +1,34 @@
+import java.util.Scanner;
 
+public class Task04 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] arr = new int[10]; // Array size 10
+        
+        // Input array
+        System.out.println("Enter 10 numbers:");
+        for (int i = 0; i < 10; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        // Input number to search
+        System.out.print("Enter number to search: ");
+        int target = sc.nextInt(); // Number to find
+
+        boolean found = false; // Flag to check if found
+        System.out.print("Found at indices: ");
+        // Linear search through array
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == target) { // If element matches
+                System.out.print(i + " "); // Print its index
+                found = true; // Mark as found
+            }
+        }
+
+        // If not found
+        if (!found) {
+            System.out.println("\nNumber not found");
+        }
+        sc.close();
+    }
+}
