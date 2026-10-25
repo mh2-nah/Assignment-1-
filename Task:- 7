@@ -1,1 +1,29 @@
+public class Task08 {
+    public static void main(String[] args) {
+        int[] arr = {9, 4, 7, 2, 5, 1, 8, 3, 6, 10}; // Unsorted array
 
+        // Bubble Sort Logic for Ascending Order
+        for (int i = 0; i < arr.length - 1; i++) { // Outer loop for passes
+            for (int j = 0; j < arr.length - 1 - i; j++) { // Inner loop for comparison
+                if (arr[j] > arr[j + 1]) { // If left element > right element
+                    // Swap elements
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+
+        // Print ascending order
+        System.out.println("Ascending order:");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+
+        // Print descending order by traversing reverse
+        System.out.println("\nDescending order:");
+        for (int i = arr.length - 1; i >= 0; i--) { // Start from last
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
